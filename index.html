@@ -1,0 +1,117 @@
+<!-- @author : Muhammad Azhari
+NPM     : 1402019061
+Tugas3_1402019061 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>Tugas 3 1402019061</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+        <h1 id="name" style="display:none"></h1>
+        <script>
+                inputName();
+                function inputName() {
+                        var name = prompt("Masukkan Nama Anda");
+                        var sapaan = "Selamat datang, "+name;
+                        document.getElementById("name").style.display="block";
+                        document.getElementById("name").innerHTML = sapaan;
+                }
+        </script>
+        <p> Menghitung volume dan luas permukaan dari silinder, kerucut dan bola.</p>
+        <section>
+        <h1><b>Silinder</b></h1>
+                        <p>
+                        <label>Masukkan jari-jari silinder (dalam meter)</label>
+                        <input type="number" id="jarisilinder" style="float: right;" placeholder="Masukkan jari-jari"> 
+                        </p>
+                        <p>
+                        <label>Masukkan tinggi silinder (dalam meter)</label>
+                        <input type="number" id="tinggisilinder" style="float: right;" placeholder="Masukkan tinggi"> 
+                        </p>
+                        <button class="btn_style" style="float: right;" onclick="silinder()">Hitung!</button>
+                        <br>
+                        <h1><b>Hasil Perhutingan</b></h1>
+                        <br>
+                        Luas permukaan: <span id = "hluassilinder"></span> m^2
+                        <br>
+                        Volume: <span id = "hvolumesilinder"></span> m^3
+      
+        <script>
+        var hvolumesilinder1 = document.getElementById('hvolumesilinder');
+        var hluassilinder1 = document.getElementById('hluassilinder');
+        
+        function silinder() { 
+                var jss = jarisilinder.value;
+                var tss = tinggisilinder.value;
+
+                hvolumesilinder1.innerHTML = 3.14*jss*jss*tss;
+                // hluassilinder1.innerHTML = 2 * 3.14 * jss * (jss + tss);
+                hluassilinder1.innerHTML = (3.14*jss*jss)+(2*3.14*jss*tss);
+        } 
+        </script> 
+
+        <h1><b>Kerucut</b></h1>
+                        <p>
+                        <label>Masukkan jari-jari kerucut (dalam meter)</label>
+                        <input type="number" id="jarikerucut" style="float: right;" placeholder="Masukkan jari-jari"> 
+                        </p>
+                        <p>
+                        <label>Masukkan garis pelukis kerucut (dalam meter)</label>
+                        <input type="number" id="garispelukiskerucut" style="float: right;" placeholder="Masukkan garis pelukis kerucut"> 
+                        </p>
+                        <p>
+                        <label>Masukkan tinggi kerucut (dalam meter)</label>
+                        <input type="number" id="tinggikerucut" style="float: right;" placeholder="Masukkan tinggi"> 
+                        </p>
+                        <button class="btn_style" style="float: right;" onclick="kerucut()">Hitung!</button>
+                        <br>
+                        <h1><b>Hasil Perhitungan</b></h1>
+                        <br>
+                        Luas permukaan: <span id = "hluaskerucut"></span> m^2
+                        <br>
+                        Volume: <span id = "hvolumekerucut"></span> m^3
+      
+        <script>
+        var hvolumekerucut1 = document.getElementById('hvolumekerucut');
+        var hluaskerucut1 = document.getElementById('hluaskerucut');
+        
+        function kerucut() { 
+                var jkerucut= jarikerucut.value;
+                var gpkerucut= garispelukiskerucut.value;
+                var tkerucut = tinggikerucut.value;
+
+                hvolumekerucut1.innerHTML = 1/3*3.14*jkerucut*jkerucut*tkerucut;
+                hluaskerucut1.innerHTML = 3.14*jkerucut*(jkerucut+gpkerucut);
+        } 
+        </script>       
+
+        <h1><b>Bola</b></h1>
+                        <p>
+                        <label>Masukkan jari-jari bola (dalam meter)</label>
+                        <input type="number" id="jaribola" style="float: right;" placeholder="Masukkan jari-jari"> 
+                        </p>
+                        <button class="btn_style" style="float: right;" onclick="bola()">Hitung!</button>
+                        <br>
+                        <h1><b>Hasil Perhutingan</b></h1>
+                        <br>
+                        hasil Luas: <span id = "hluasbola"></span> m^2
+                        <br>
+                        hasil Volume: <span id = "hvolumebola"></span> m^3
+      
+        <script>
+        var hvolumebola1 = document.getElementById('hvolumebola');
+        var hluasbola1 = document.getElementById('hluasbola');
+        
+        function bola() { 
+                var jsb = jaribola.value;
+                hluasbola1.innerHTML = 4*3.14*Math.pow(jsb, 2);
+                hvolumebola1.innerHTML = (4*3.14*Math.pow(jsb, 3))/3;
+        } 
+        </script>      
+        </section>         
+</body>
+        
+</html>
